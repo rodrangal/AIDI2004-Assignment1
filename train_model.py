@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
 import joblib
 
 # Load Titanic dataset
@@ -31,4 +31,4 @@ joblib.dump(model, "titanic_model.pkl")
 
 # Evaluate
 y_pred = model.predict(X_test)
-print(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}")
+print(f"F1 Score: {f1_score(y_test, y_pred):.2f}")
